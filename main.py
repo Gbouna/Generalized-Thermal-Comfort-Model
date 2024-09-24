@@ -38,9 +38,9 @@ def main():
         for group_index, (train_participants, val_participant, test_participant) in enumerate(loso_datasets, start=1):
             identifier = f"LOSO_Group{group_index}_{test_participant}"
             # Prepare training, validation, and test data
-            train_data = [os.path.join(args.base_dir, participant, 'Combined') for participant in train_participants]
-            val_data = [os.path.join(args.base_dir, participant, 'Combined') for participant in val_participant]
-            test_data = os.path.join(args.base_dir, test_participant, 'Combined')
+            train_data = [os.path.join(args.base_dir, participant, 'data') for participant in train_participants]
+            val_data = [os.path.join(args.base_dir, participant, 'data') for participant in val_participant]
+            test_data = os.path.join(args.base_dir, test_participant, 'data')
             # Call the LOSO training function
             loso_train.run_loso_training(model, train_data, val_data, test_data, args.checkpoint_dir, identifier)
 
@@ -59,12 +59,10 @@ def main():
         for main_group_index, (train_participants, validation_participants, test_participant) in enumerate(logo_datasets, start=1):
             identifier = f"LOGO_MainGroup{main_group_index}_{'_'.join(test_participant)}"
             # Prepare training, validation, and test data
-            train_data = [os.path.join(args.base_dir, participant, 'Combined') for participant in train_participants]
-            val_data = [os.path.join(args.base_dir, participant, 'Combined') for participant in validation_participants]
-            test_data = [os.path.join(args.base_dir, participant, 'Combined') for participant in test_participant]
+            train_data = [os.path.join(args.base_dir, participant, 'data') for participant in train_participants]
+            val_data = [os.path.join(args.base_dir, participant, 'data') for participant in validation_participants]
+            test_data = [os.path.join(args.base_dir, participant, 'data') for participant in test_participant]
             # Call the LOGO training function
             logo_train.run_logo_training(model, train_data, val_data, test_data, args.checkpoint_dir, identifier)
 if __name__ == "__main__":
     main()
-
-# python main.py --train_type loso --base_dir /all_data --checkpoint_dir /model_checkpoint_loso
