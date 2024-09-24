@@ -27,7 +27,6 @@ conda activate tf
 ```
 `
 # Data Preparation
-
 Your dataset should have the following structure: 
 ```
 - all_data/
@@ -39,13 +38,8 @@ Your dataset should have the following structure:
       - Neutral
       - Warm
 ```
-
 # Training
-
 ### LOSO Training:
-
 Run the following script for LOSO training `python main.py --train_type loso --base_dir /path/to/base_dir --checkpoint_dir /path/to/checkpoint_dir`
-
 ### LOGO Training:
-
 Run the following script for LOGO training `python main.py --train_type logo --base_dir /path/to/base_dir --checkpoint_dir /path/to/checkpoint_dir`
