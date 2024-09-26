@@ -2,6 +2,8 @@
 
 This is the official repository for **A Generalized Thermal Comfort Model using Thermographic Images and Compact Convolutional Transformers: Towards Scalable and Adaptive Occupant Comfort Optimization**, our paper published in the Journal of Building and Environment. 
 
+The paper can be found [here](https://doi.org/10.1016/j.buildenv.2024.112118)
+
 # Prerequisites
 Create a conda environment with Python 3.8
 
