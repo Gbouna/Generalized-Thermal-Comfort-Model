@@ -1,9 +1,9 @@
 import argparse
 import logging
 import os
-from dataloader import data_loader
-from model import get_cct_model
-from train import logo_train, loso_train
+from dataloader.dataloader import data_loader
+from model.model import get_cct_model
+from train.train import logo_train, loso_train
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
